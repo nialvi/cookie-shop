@@ -1,4 +1,5 @@
-import { Product } from "./product";
+import { Product, totalPrice } from "./product";
+import { User } from "./user";
 
 export type OrderStatus = "new" | "delivery" | "completed";
 export type Order = {
@@ -8,3 +9,13 @@ export type Order = {
   status: OrderStatus;
   total: PriceCents;
 };
+
+export function createOrder(user: User, products: Product[]): Order {
+  return {
+    user: user.id,
+    products,
+    created: new Date().toISOString(),
+    status: "new",
+    total: totalPrice(products),
+  };
+}

@@ -6,3 +6,11 @@ export type User = {
   preferences: Ingredient[];
   allergies: Ingredient[];
 };
+
+export function hasAllergy(user: User, ingredient: Ingredient): boolean {
+  return user.allergies.includes(ingredient);
+}
+
+export function hasPreferences(user: User, ingredient: Ingredient): boolean {
+  return user.preferences.includes(ingredient);
+}
