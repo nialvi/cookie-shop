@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useContext } from "react";
+import { cookies } from "./fakeData";
 
 const StoreContext = React.createContext<any>({});
 export const useStore = () => useContext(StoreContext);
@@ -13,6 +14,7 @@ export const Provider: React.FC = ({ children }) => {
     user,
     cart,
     orders,
+    cookies,
     updateUser: setUser,
     updateCart: setCart,
     updateOrders: setOrders,

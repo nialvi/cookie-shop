@@ -1,5 +1,6 @@
 import { Cart } from "../domain/cart";
 import { Order } from "../domain/order";
+import { Product } from "../domain/product";
 import { User } from "../domain/user";
 
 export interface OrdersStorageService {
@@ -24,4 +25,8 @@ export interface CartStorageService {
 export interface UserStorageService {
   user?: User;
   updateUser(user: User): void;
+}
+
+export interface CookieStorageService {
+  cookies: Product[];
 }
