@@ -3,12 +3,13 @@ import { createOrder } from "../domain/order";
 import { User } from "../domain/user";
 import { useNotifier } from "../services/notificationAdapter";
 import { usePayment } from "../services/paymentAdapter";
-import { useOrdersStorage } from "../services/storageAdapter";
+import { useCartStorage, useOrdersStorage } from "../services/storageAdapter";
 
 export function useOrderProducts() {
   const payment = usePayment();
   const notifier = useNotifier();
   const orderStorage = useOrdersStorage();
+  const carStorage = useCartStorage();
 
   async function orderProducts(user: User, cart: Cart) {
     const order = createOrder(user, cart.products);
@@ -21,6 +22,7 @@ export function useOrderProducts() {
 
     const { orders } = orderStorage;
     orderStorage.updateOrders([...orders, order]);
+    carStorage.emptyCart();
   }
 
   return { orderProducts };

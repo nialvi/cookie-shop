@@ -4,7 +4,7 @@ import { fakeApi } from "./api";
 export function usePayment(): PaymentService {
   return {
     tryPay(amount: PriceCents) {
-      return fakeApi(false);
+      return fakeApi(true);
     },
   };
 }
