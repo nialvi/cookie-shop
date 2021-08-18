@@ -1,19 +1,25 @@
 import { Link } from "react-router-dom";
+import { useCartStorage, useUserStorage } from "../../services/storageAdapter";
+
+import styles from "./index.module.css";
 
 export const Header: React.FC = () => {
+  const { user } = useUserStorage();
+  const { cart } = useCartStorage();
+
   return (
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/auth">Auth</Link>
-        </li>
-        <li>
-          <Link to="/user">User</Link>
-        </li>
-      </ul>
-    </div>
+    <header className={styles.header}>
+      <Link className={styles.logo} to="/">
+        Cookie 🍪
+      </Link>
+
+      {!user ? (
+        <Link to="/auth">Login</Link>
+      ) : (
+        <Link to="/user">
+          {user.name} ({cart.products.length})
+        </Link>
+      )}
+    </header>
   );
 };
