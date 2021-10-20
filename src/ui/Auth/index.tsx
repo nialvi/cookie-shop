@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
-import { useAuthenticate } from "../../application/authenticate";
-import { UserName } from "../../domain/user";
+import { useAuthenticate } from "../../features/user/useCases/authenticate";
+import { UserName } from "../../features/user/model";
 import styles from "./index.module.css";
 
 export const Auth: React.FC = () => {

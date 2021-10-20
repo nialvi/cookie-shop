@@ -1,5 +1,5 @@
-import { totalPrice } from "../../domain/product";
-import { useCartStorage } from "../../services/storageAdapter";
+import { totalPrice } from "../../features/product/model";
+import { useCartStorage } from "../../features/storage/adapter/store";
 import { Cookie } from "../Cookie";
 import styles from "./index.module.css";
 

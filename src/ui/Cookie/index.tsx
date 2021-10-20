@@ -1,7 +1,10 @@
-import { useAddToCart } from "../../application/addToCart";
-import { contains } from "../../domain/cart";
-import { Product } from "../../domain/product";
-import { useCartStorage, useUserStorage } from "../../services/storageAdapter";
+import { useAddToCart } from "../../features/cart/useCases/addToCart";
+import { contains } from "../../features/cart/model";
+import { Product } from "../../features/product/model";
+import {
+  useCartStorage,
+  useUserStorage,
+} from "../../features/storage/adapter/store";
 import styles from "./index.module.css";
 import { Toppings } from "./Topping";
 

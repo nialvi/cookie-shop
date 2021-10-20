@@ -1,5 +1,5 @@
-import { Product, totalPrice } from "./product";
-import { User } from "./user";
+import { Product, totalPrice } from "../../product/model";
+import { User } from "../../user/model";
 
 export type OrderStatus = "new" | "delivery" | "completed";
 export type Order = {

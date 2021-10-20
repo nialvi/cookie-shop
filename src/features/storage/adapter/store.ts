@@ -1,10 +1,10 @@
 import {
   CartStorageService,
-  OrdersStorageService,
   UserStorageService,
   CookieStorageService,
-} from "../application/ports";
-import { useStore } from "./store";
+} from "../useCases/port";
+import { useStore } from "../../../store";
+import { OrdersStorageService } from "../../order/useCases/port";
 
 export function useUserStorage(): UserStorageService {
   return useStore();

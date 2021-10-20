@@ -1,4 +1,4 @@
-import { useCookieStorage } from "../../services/storageAdapter";
+import { useCookieStorage } from "../../features/storage/adapter/store";
 import { Cookie } from "../Cookie";
 
 import styles from "./index.module.css";

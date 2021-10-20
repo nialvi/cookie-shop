@@ -1,9 +1,9 @@
-import { Cart } from "../domain/cart";
-import { createOrder } from "../domain/order";
-import { User } from "../domain/user";
-import { useNotifier } from "../services/notificationAdapter";
-import { usePayment } from "../services/paymentAdapter";
-import { useCartStorage, useOrdersStorage } from "../services/storageAdapter";
+import { Cart } from "../../cart/model";
+import { createOrder } from "../../order/model";
+import { User } from "../../user/model";
+import { useNotifier } from "../../notification/adapter/notifier";
+import { usePayment } from "../../payment/adapter/pay";
+import { useCartStorage, useOrdersStorage } from "../../storage/adapter/store";
 
 export function useOrderProducts() {
   const payment = usePayment();

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
-import { useCartStorage, useUserStorage } from "../../services/storageAdapter";
+import {
+  useCartStorage,
+  useUserStorage,
+} from "../../features/storage/adapter/store";
 
 import styles from "./index.module.css";
 

@@ -1,8 +1,8 @@
-import { addProduct } from "../domain/cart";
-import { Product } from "../domain/product";
-import { hasAllergy, User } from "../domain/user";
-import { useNotifier } from "../services/notificationAdapter";
-import { useCartStorage } from "../services/storageAdapter";
+import { addProduct } from "../model";
+import { Product } from "../../product/model";
+import { hasAllergy, User } from "../../user/model";
+import { useNotifier } from "../../notification/adapter/notifier";
+import { useCartStorage } from "../../storage/adapter/store";
 
 export function useAddToCart() {
   const { cart, updateCart } = useCartStorage();

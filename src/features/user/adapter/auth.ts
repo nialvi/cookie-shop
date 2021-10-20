@@ -1,6 +1,6 @@
-import { AuthenticationService } from "../application/ports";
-import { UserName } from "../domain/user";
-import { fakeApi } from "./api";
+import { AuthenticationService } from "../useCases/port";
+import { UserName } from "../model";
+import { fakeApi } from "../../../api";
 
 export function useAuth(): AuthenticationService {
   return {
